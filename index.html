@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto|Molle:400i&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/1816abf144.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Drawing App | Mehmet Can Aygün</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar__logo text-shadow">
+        Drawing APP
+        <a href="https://www.github.com/mehmetcanaygun"> by MCA</a>
+      </div>
+      <div class="button-wrapper">
+        <button class="toggle-toolbox-btn box-shadow" onclick="toggleToolbox()">
+          <i class="fas fa-cog"></i>
+        </button>
+      </div>
+      <div class="toolbox box-shadow">
+        <div>
+          <p>Brush Type</p>
+          <button
+            class="toolbox-btn bt-btn"
+            data-brush-type="square"
+            style="background-color: #000;"
+            onclick="selectBrushType(this)"
+          ></button>
+          <button
+            class="toolbox-btn bt-btn bt-selected"
+            data-brush-type="round"
+            style="border-radius: 50%; background-color: #000;"
+            onclick="selectBrushType(this)"
+          ></button>
+          <!-- <button
+            class="toolbox-btn bt-btn"
+            data-brush-type="eraser"
+            style="border-radius: 4px; background-color: pink;"
+            onclick="selectBrushType(this)"
+          ></button> -->
+        </div>
+        <div>
+          <p>Brush Size</p>
+          <button
+            class="toolbox-btn bs-btn"
+            data-brush-size="2"
+            onclick="selectBrushSize(this)"
+          >
+            2
+          </button>
+          <button
+            class="toolbox-btn bs-btn bs-selected"
+            data-brush-size="4"
+            onclick="selectBrushSize(this)"
+          >
+            4
+          </button>
+          <button
+            class="toolbox-btn bs-btn"
+            data-brush-size="8"
+            onclick="selectBrushSize(this)"
+          >
+            8
+          </button>
+          <button
+            class="toolbox-btn bs-btn"
+            data-brush-size="16"
+            onclick="selectBrushSize(this)"
+          >
+            16
+          </button>
+          <button
+            class="toolbox-btn bs-btn"
+            data-brush-size="32"
+            onclick="selectBrushSize(this)"
+          >
+            32
+          </button>
+        </div>
+        <div>
+          <p>Color</p>
+          <button
+            class="toolbox-btn c-btn c-selected"
+            style="background-color: #000"
+            data-color="#000"
+            onclick="selectColor(this)"
+          ></button>
+          <button
+            class="toolbox-btn c-btn"
+            style="background-color: #333"
+            data-color="#333"
+            onclick="selectColor(this)"
+          ></button>
+          <button
+            class="toolbox-btn c-btn"
+            style="background-color: #808080"
+            data-color="#808080"
+            onclick="selectColor(this)"
+          ></button>
+          <button
+            class="toolbox-btn c-btn"
+            style="background-color: #2626aa"
+            data-color="#2626aa"
+            onclick="selectColor(this)"
+          ></button>
+          <button
+            class="toolbox-btn c-btn"
+            style="background-color: #437cc7"
+            data-color="#437cc7"
+            onclick="selectColor(this)"
+          ></button>
+          <button
+            class="toolbox-btn c-btn"
+            style="background-color: #6acbf1"
+            data-color="#6acbf1"
+            onclick="selectColor(this)"
+          ></button>
+          <button
+            class="toolbox-btn c-btn"
+            style="background-color: #d81b1b"
+            data-color="#d81b1b"
+            onclick="selectColor(this)"
+          ></button>
+          <button
+            class="toolbox-btn c-btn"
+            style="background-color: #ffab2d"
+            data-color="#ffab2d"
+            onclick="selectColor(this)"
+          ></button>
+          <button
+            class="toolbox-btn c-btn"
+            style="background-color: #fffb22"
+            data-color="#fffb22"
+            onclick="selectColor(this)"
+          ></button>
+          <button
+            class="toolbox-btn c-btn"
+            style="background-color: #2f6917"
+            data-color="#2f6917"
+            onclick="selectColor(this)"
+          ></button>
+          <button
+            class="toolbox-btn c-btn"
+            style="background-color: #2bb12b"
+            data-color="#2bb12b"
+            onclick="selectColor(this)"
+          ></button>
+          <button
+            class="toolbox-btn c-btn"
+            style="background-color: #8afd47"
+            data-color="#8afd47"
+            onclick="selectColor(this)"
+          ></button>
+          <button
+            class="toolbox-btn c-btn"
+            style="background-color: #6b1685"
+            data-color="#6b1685"
+            onclick="selectColor(this)"
+          ></button>
+          <button
+            class="toolbox-btn c-btn"
+            style="background-color: #9040d1"
+            data-color="#9040d1"
+            onclick="selectColor(this)"
+          ></button>
+          <button
+            class="toolbox-btn c-btn"
+            style="background-color: #e6a4d7"
+            data-color="#e6a4d7"
+            onclick="selectColor(this)"
+          ></button>
+          <button
+            class="toolbox-btn c-btn"
+            style="background-color: #864121"
+            data-color="#864121"
+            onclick="selectColor(this)"
+          ></button>
+          <button
+            class="toolbox-btn c-btn"
+            style="background-color: #db7133"
+            data-color="#db7133"
+            onclick="selectColor(this)"
+          ></button>
+          <button
+            class="toolbox-btn c-btn"
+            style="background-color: #fff"
+            data-color="#fff"
+            onclick="selectColor(this)"
+          ></button>
+        </div>
+        <div>
+          <button class="clear-btn" onclick="clearCanvas()">Clear</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Canvas -->
+    <canvas id="canvas"></canvas>
+
+    <script src="app.js"></script>
+  </body>
+</html>

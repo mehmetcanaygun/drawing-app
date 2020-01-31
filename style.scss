@@ -1,0 +1,177 @@
+// Variables
+$primary-color: #1a74a8;
+$secondary-color: #b63131;
+$light-color: #cccccc;
+$dark-color: #333;
+$navbar-height: 60px;
+
+// Global Settings
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+button:focus {
+  outline: none;
+}
+
+// Utility Classes
+.container {
+  padding: 0 5%;
+}
+
+.box-shadow {
+  box-shadow: 2px 2px 8px #000;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px #000;
+}
+
+// Navbar
+.navbar {
+  width: 100%;
+  height: $navbar-height;
+  background-image: linear-gradient($dark-color, darken($dark-color, 5));
+  color: #fff;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  .navbar__logo {
+    font-size: 1.3rem;
+    font-family: "Molle", cursive;
+
+    a {
+      font-family: "Molle", cursive;
+      text-shadow: none;
+    }
+
+    a:hover {
+      color: $light-color;
+      transition: 0.3s;
+    }
+  }
+
+  .button-wrapper {
+    .toggle-toolbox-btn {
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      background-color: $primary-color;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+
+      i {
+        font-size: 1.5rem;
+      }
+    }
+
+    .toggle-toolbox-btn.toggled {
+      transform: rotateZ(-225deg);
+      background-color: $secondary-color;
+      transition: 0.3s;
+    }
+  }
+
+  .toolbox {
+    position: absolute;
+    top: -700px;
+    right: 4px;
+    width: 120px;
+    background-color: rgba(#000, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: top 0.3s ease-in-out;
+
+    div {
+      width: 100%;
+      border-bottom: 1px solid $light-color;
+      padding: 1rem 0;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      p {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .toolbox-btn {
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+      margin: 0.2rem;
+      border: 1px solid #fff;
+      box-sizing: content-box;
+    }
+
+    .toolbox-btn:hover {
+      background-color: $light-color;
+      transition: 0.3s;
+    }
+
+    .toolbox-btn.bt-selected {
+      border: 3px solid $primary-color;
+    }
+    .toolbox-btn.bs-selected {
+      border: 3px solid $primary-color;
+    }
+    .toolbox-btn.c-selected {
+      border: 3px solid $primary-color;
+    }
+
+    .clear-btn {
+      cursor: pointer;
+      width: 90%;
+      font-size: 1.2rem;
+      background-color: #fff;
+      color: $primary-color;
+      border: none;
+      padding: 6px 0;
+    }
+
+    .clear-btn:hover {
+      background-color: $light-color;
+      transition: 0.3s;
+    }
+  }
+
+  .toolbox.toggled {
+    top: $navbar-height + 4;
+    transition: top 0.3s ease-in-out;
+  }
+}
+
+// Canvas
+#canvas {
+  display: block;
+}
+
+#canvas:hover {
+  cursor: crosshair;
+}
